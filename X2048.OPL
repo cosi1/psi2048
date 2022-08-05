@@ -1,0 +1,60 @@
+x2048:
+global b%(16),a%(4)
+global ch$(12),ch%
+global fr%,sc%
+local i%,i1%,key%
+fr%=16
+cls
+x2048udg:
+x2048sco:(0)
+do
+ x2048add:
+ x2048brd:
+ key%=get
+ i%=1
+ if key%=3 or key%=4
+  do
+   a%(1)=b%(i%)
+   a%(2)=b%(i%+4)
+   a%(3)=b%(i%+8)
+   a%(4)=b%(i%+12)
+   if key%=3
+    x2048lin:
+   else
+    x2048li1:
+   endif
+   b%(i%)=a%(1)
+   b%(i%+4)=a%(2)
+   b%(i%+8)=a%(3)
+   b%(i%+12)=a%(4)
+   i%=i%+1
+  until i%=5
+ elseif key%=5 or key%=6
+  do
+   i1%=(i%-1)*4
+   a%(1)=b%(i1%+1)
+   a%(2)=b%(i1%+2)
+   a%(3)=b%(i1%+3)
+   a%(4)=b%(i1%+4)
+   if key%=5
+    x2048lin:
+   else
+    x2048li1:
+   endif
+   b%(i1%+1)=a%(1)
+   b%(i1%+2)=a%(2)
+   b%(i1%+3)=a%(3)
+   b%(i1%+4)=a%(4)
+   i%=i%+1
+  until i%=5
+ endif
+ x2048brd:
+until key%=1 or fr%=0 or sc%>10
+at 9,1
+if sc%>10
+ print "You win!"
+else
+ print "GAME OVER"
+endif
+get
+

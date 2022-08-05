@@ -1,0 +1,5 @@
+x2048sco:(k%)
+sc%=k%+1
+at 7+sc%,4
+print chr$(0);
+

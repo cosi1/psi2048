@@ -1,0 +1,12 @@
+X2048brd:
+local i%
+at 1,1
+i%=1
+do
+ print chr$(peekb(ch%+b%(i%)));
+ if i%=4 or i%=8 or i%=12
+  print
+ endif
+ i%=i%+1
+until i%=17
+

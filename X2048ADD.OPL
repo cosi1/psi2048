@@ -1,0 +1,13 @@
+X2048ADD:
+local i%,j%
+j%=int(rnd*fr%+1)
+i%=0
+do
+ i%=i%+1
+ if b%(i%)=0
+  j%=j%-1
+ endif
+until j%=0
+b%(i%)=1
+fr%=fr%-1
+
