@@ -12,7 +12,7 @@ do
  x2048brd:
  key%=get
  i%=1
- if key%=3 or key%=4
+ if key%=3 or key%=4 or key%=%c or key%=%C
   do
    a%(1)=b%(i%)
    a%(2)=b%(i%+4)
